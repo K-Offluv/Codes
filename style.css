@@ -1,0 +1,1027 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root{
+    --text-color: #fff;
+    --bg-color: #000;
+    --main-color: #ffa343;
+
+    --h1-font: 6rem;
+    --h2-font: 3rem;
+    --p-font: 1rem;
+}
+body{
+    color: var(--text-color);
+    background: var(--bg-color);
+    background-color: white;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    background: transparent;
+    padding: 30px 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50s ease;
+}
+
+header img{
+    width: 80px;
+}
+.navbar{
+    display: flex;
+}
+
+.navbar a{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin: 10px 12px;
+    transition: all .50s ease;
+
+}
+.navbar a:hover{
+    color: white;
+}
+
+/*----------------------sub-menu-----------------------*/
+
+.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 1px; /* Reduced space between menu items */
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  padding: 10px 14px; /* Reduced padding (was 15px 20px) */
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease;
+}
+
+.navbar li a:hover {
+  background: gray;
+}
+
+/* Dropdown menu */
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 95%; /* Reduced vertical gap between main menu and dropdown */
+  left: 0;
+  background: gray;
+  border-radius: 5px;
+  min-width: 220px; /* Slightly smaller width */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.sub-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-menu ul li a {
+  display: block;
+  padding: 8px 12px; /* Reduced dropdown item spacing */
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.sub-menu ul li a:hover {
+  background: #555;
+}
+
+/* Hover to show dropdown */
+.navbar li:hover .sub-menu {
+  display: block;
+}
+
+/* Smooth dropdown animation */
+.sub-menu {
+  opacity: 0;
+  transform: translateY(5px); /* Smaller movement */
+  transition: all 0.25s ease;
+  visibility: hidden;
+}
+
+.navbar li:hover .sub-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+
+
+.h-right{
+    display: flex;
+    align-items: center;
+}
+.h-right a:first-child{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    margin-right: 20px;
+}
+.h-right a{
+    vertical-align: middle;
+    font-size: 20px;
+    color: var(--text-color);
+    margin-right: 8px;
+    margin-left: 3px;
+    transition: all .50s ease;
+}
+.h-right a:hover{
+    color: red;
+    transform: translateY(-3px);
+}
+
+#menu-icon{
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+section{
+    padding: 70px 17% 60px;
+}
+
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to left, rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url(images/ba2.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+.home-text h1{
+    font-size: var(--h1-font);
+    font-weight: 550;
+    line-height: 1.0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.home-text p{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #f2dadaab;
+    margin-bottom: 35px;
+    text-align: center;
+}
+.btn{
+    display: inline-block;
+    padding: 13px 40px;
+    background: #b61f1f;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all .50s ease;
+    cursor: pointer;
+    position: relative;
+}
+.btn:hover{
+    transform: translateX(10px);
+    border: 2px solid var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+}
+header.sticky{
+    padding: 8px 17%;
+    background: black;
+    backdrop-filter: blur(35px);
+}
+/* General button styling */
+.btn {
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: darkred;
+}
+
+/* Popup form background overlay */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Show form when anchor is clicked */
+.form-popup:target {
+  display: flex;
+}
+
+/* Form container box */
+.form-container {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Form header */
+.form-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form-container p {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form inputs */
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+  resize: none;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: red;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  background: red;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: darkred;
+}
+
+/* Close button */
+.close-btn {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: darkred;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+
+
+
+/*-------------------- About Us -----------------*/
+
+.about{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    color: #000;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #322828;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 20px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.about-col{
+    flex-basis: 100%;
+    background: #fff3f3;
+    border-radius: 50px;
+    margin-bottom: 5%;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.about-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}    
+.check-list{
+    margin: 0;
+    padding-left: 1.2rem;
+    text-align: left;
+    color: #322828;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+
+/*--------------------Core Values-------------------------*/
+
+.core-values{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-top: 50px;
+    color: #000;
+}
+
+.values-col{
+    flex-basis: 100%;
+    border-radius: 100px;
+    margin-bottom: left;
+}
+.values-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.values-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/*--------------------our team-------------------------*/
+
+
+.our-team{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-top: 50px;
+    color: #000;
+}
+.structure{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-top: 50px;
+    color: #000;
+}
+
+/*--------------------organisational structure-------------------------*/
+
+.structure{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    color: #000;
+}
+
+.structure-col{
+    flex-basis: 100%;
+    border-radius: 100px;
+    margin-bottom: left;
+}
+.structure-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+/*-------------------OUR SERVICES------------------------------*/
+
+.our-service{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    color: #000;
+}
+
+
+.service{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+}
+.service-img img{
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+.service-img{
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+.service-text {
+  width: 90%;
+  max-width: 800px;
+  margin: px auto;
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 25px;
+  color: #222;
+  line-height: 1.6;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-text h5 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.service-text .content {
+  display: none;
+  margin-top: 15px;
+}
+
+/* Hide checkbox */
+.read-more-checkbox {
+  display: none;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: red;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: darkred;
+}
+
+
+
+
+ /* Show hidden content when checkbox is checked */
+.read-more-checkbox:checked ~ .content {
+  display: block;
+}
+
+/* Change button text when expanded */
+.read-more-checkbox:checked + .content + .btn::after {
+  content: " Read less";
+}
+
+.btn::after {
+  content: "";
+}
+
+
+
+
+
+
+
+
+.goods{
+    text-align: center;
+    color: red;
+}
+.goods h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+.box-1{
+    position: relative;
+}
+.box-1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(100%);
+    transition: all .3s cubic-bezier(.499, .05, .55, .95);
+    will-change: filter;
+    display: block;
+}
+
+/*-------------------PROJECT------------------------------*/
+
+.Pro{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    color: #000;
+}
+.Pro {
+  padding: 2px 2px 2px; /* Top padding so it doesn’t hide behind fixed navbar */
+  background: red;
+  text-align: center;
+  min-height: 5vh;
+}
+
+.Pro h1 {
+  font-size: 35px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cons h3{
+    text-align: left;
+    color: red;
+}
+
+
+
+
+/*-------------------TOTAL QUALITY MANAGEMENT (TQM)------------------------------*/
+
+.TQM{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    color: #000;
+}
+.TQM-team p{
+    text-align: left;
+}
+
+
+/*-------------------Footer------------------------------*/
+
+footer{
+    background: #343434;
+    padding-top: 50px;
+}
+.container{
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.footer-content{
+    width: 33.3%;
+}
+h3{
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.footer-content p{
+    width: 190px;
+    margin: auto;
+    padding: 7px;
+    cursor: pointer;
+}
+.footer-content p{
+    text-align: center;
+    color: white;
+}
+.footer-content ul{
+    text-align: center;
+}
+.list{
+    padding: 0;
+}
+.list li{
+    width: auto;
+    text-align: center;
+    list-style-type: none;
+    padding: 7px;
+    position: relative;
+}
+.list li a{
+    color: var(--text-color)
+}
+.list li::before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: red;
+    transition-duration: .5s;
+}
+.list li:hover::before{
+    width: 70px;
+}
+.social-icons{
+    text-align: center;
+    padding: 0;
+}
+.social-icons li{
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social-icons i{
+    color: white;
+    font-size: 25px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+.social-icons i:hover{
+    color: red;
+}
+.bottom-bar{
+    background: red;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+.bottom-bar p{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1700px){
+  header {
+    padding: 18px 8%;
+  }
+  header.sticky {
+    padding: 7px 8%;
+  }
+  section {
+    padding: 50px 8% 40px;
+  }
+}
+
+@media (max-width: 1200px){
+  header {
+    padding: 14px 5%;
+  }
+  header.sticky {
+    padding: 7px 5%;
+  }
+  section {
+    padding: 45px 5% 35px;
+  } 
+
+  :root {
+    --h1-font: 4.5rem;
+    --h2-font: 2.8rem;
+    --p-font: 15px;
+  }
+
+  .home {
+    height: 90vh;
+  }
+}
+
+@media (max-width: 1050px){
+  .about-col {
+    gap: 1.5rem;
+  }
+
+  .service,
+  .Pro {
+    gap: 3rem;
+  }
+
+  /* Show hamburger icon */
+  #menu-icon {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Hide the navbar initially */
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 60px;
+    background-color: #000;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all .4s ease;
+    z-index: 1000;
+  }
+
+  .navbar a {
+    display: block;
+    color: #fff;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    transition: color .3s;
+  }
+
+  .navbar a:hover {
+    color: #f0c040;
+  }
+
+  /* Open menu when .open is added */
+  .navbar.open {
+    right: 0;
+  }
+
+  /* Ensure dropdown submenus stack properly */
+  .sub-menu {
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+
+  .sub-menu ul {
+    padding: 0;
+  }
+
+  .sub-menu ul li a {
+    color: #ccc;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 800px){
+  .service,
+  .Pro {
+    grid-template-columns: 1fr;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px){
+  :root {
+    --h1-font: 3.5rem;
+    --h2-font: 2.1rem;
+  }
+
+  .home {
+    height: 85vh; 
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 450px){
+  header {
+    padding: 12px 3%;
+  }
+
+  header.sticky {
+    padding: 7px 3%;
+  }
+
+  section {
+    padding: 60px 3% 50px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+}
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 35px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float i {
+  margin-top: 12px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5b;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+
+/* === SOCIAL MEDIA ICON STYLES === */
+
+.h-right a i,
+.social-icons a i {
+  font-size: 25px;
+  color: #ffffff;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+/* Add a hover effect for each platform */
+.h-right a i:hover,
+.social-icons a i:hover {
+  transform: scale(1.2);
+}
+
+/* Individual colors for each icon */
+.ri-instagram-fill:hover {
+  color: #E4405F; /* Instagram pink */
+}
+
+.ri-tiktok-fill:hover {
+  color: #69C9D0; /* TikTok teal */
+}
+
+.ri-whatsapp-fill:hover {
+  color: #25D366; /* WhatsApp green */
+}
+
+.ri-facebook-circle-fill:hover {
+  color: #1877F2; /* Facebook blue */
+}
+
+/* Footer Social Section */
+.footer-content .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.footer-content .social-icons a {
+  text-decoration: none;
+}
+
+/* Smooth transition on hover */
+.h-right a i,
+.footer-content .social-icons a i {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+
+/* Hide the checkbox */
+.read-more-checkbox {
+    display: none;
+}
+
+/* Hide content by default */
+.read-more-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+/* Show content when checkbox is checked */
+.read-more-checkbox:checked ~ .service-text .read-more-content {
+    max-height: 900px; /* Large height to reveal content */
+}
+
+/* Change button text when expanded */
+.read-more-checkbox:checked ~ .service-text .read-more-btn::after {
+    content: " Read less";
+}
+
+/* Default button text */
+.read-more-btn::after {
+    content: "";
+}
+
+.read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
