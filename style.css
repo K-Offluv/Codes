@@ -747,12 +747,12 @@ a:hover{
     padding: 7px;
 }
 
-/* =====================================================
-   RESPONSIVE DESIGN — FULLY OPTIMIZED FOR MOBILE
-===================================================== */
 
-/* ----------- 1700px and below (Large screens) ------------ */
-@media (max-width: 1700px) {
+
+/* ========== RESPONSIVE DESIGN (FIXED & CENTERED) ========== */
+
+/* ---------- Large Screens (1700px) ---------- */
+@media (max-width: 1700px){
   header {
     padding: 18px 8%;
   }
@@ -760,59 +760,62 @@ a:hover{
     padding: 7px 8%;
   }
   section {
-    padding: 50px 8% 40px;
+    padding: 50px 8%;
   }
 }
 
-/* ----------- 1200px and below (Laptops/Tablets) ------------ */
-@media (max-width: 1200px) {
+/* ---------- Laptops (1200px) ---------- */
+@media (max-width: 1200px){
+
   header {
     padding: 14px 6%;
   }
   header.sticky {
-    padding: 7px 6%;
+    padding: 10px 6%;
   }
+
   section {
-    padding: 45px 6% 35px;
+    padding: 45px 6%;
   }
 
   :root {
-    --h1-font: 3.8rem;
-    --h2-font: 2.4rem;
+    --h1-font: 4rem;
+    --h2-font: 2.5rem;
     --p-font: 15px;
   }
 
   .home {
-    height: 88vh;
+    height: 90vh;
+    text-align: center;
+  }
+
+  .home-text {
+    max-width: 700px;
+    margin: auto;
   }
 }
 
-/* ----------- 1050px and below (Tablets / Small laptops) ------------ */
-@media (max-width: 1050px) {
+/* ---------- Tablets (1050px) ---------- */
+@media (max-width: 1050px){
 
-  /* Show hamburger icon */
+  /* Show hamburger menu */
   #menu-icon {
     display: block;
-    font-size: 32px;
-    color: #fff;
-    z-index: 1001;
-    cursor: pointer;
+    font-size: 2rem;
   }
 
-  /* Mobile Menu */
+  /* Mobile Navbar layout */
   .navbar {
     position: fixed;
     top: 0;
     right: -100%;
     width: 100%;
     height: 100vh;
-    padding: 120px 40px;
-    background: #000;
+    padding: 100px 40px;
+    background-color: #000;
     flex-direction: column;
-    align-items: center;
     text-align: center;
     transition: .4s ease;
-    z-index: 1000;
   }
 
   .navbar.open {
@@ -821,55 +824,45 @@ a:hover{
 
   .navbar a {
     display: block;
-    margin: 18px 0;
+    margin: 20px 0;
     font-size: 1.5rem;
   }
 
-  /* Mobile dropdown fix */
-  .sub-menu {
-    position: static;
-    background: none;
-    box-shadow: none;
-  }
-
-  .sub-menu ul li a {
-    font-size: 1.2rem;
-    color: #ccc;
-  }
-
-  .service, .Pro {
-    grid-template-columns: 1fr;
+  .about-col,
+  .service,
+  .Pro {
+    flex-direction: column;
+    text-align: center;
     gap: 2rem;
   }
 }
 
-/* ----------- 800px and below (Large smartphones) ------------ */
-@media (max-width: 800px) {
+/* ---------- Small Tablets / Large Phones (800px) ---------- */
+@media (max-width: 800px){
 
   .home-text h1 {
     font-size: 2.6rem;
+    text-align: center;
   }
 
   .home-text p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
   }
 
-  .about,
-  .core-values,
-  .our-team,
-  .structure,
-  .our-service,
-  .TQM {
-    width: 95%;
-    margin: auto;
+  /* Center services */
+  .service,
+  .Pro {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
   }
 
-  /* Footer responsive */
+  /* Center footer items */
   footer .container {
     flex-direction: column;
     text-align: center;
-    width: 100%;
-    gap: 25px;
+    gap: 30px;
   }
 
   .footer-content {
@@ -877,23 +870,60 @@ a:hover{
   }
 }
 
-/* ----------- 600px and below (Standard mobile screens) ------------ */
-@media (max-width: 600px) {
+/* ---------- Phones (600px) ---------- */
+@media (max-width: 600px){
 
   :root {
-    --h1-font: 2.4rem;
-    --h2-font: 1.8rem;
-    --p-font: 14px;
+    --h1-font: 3rem;
+    --h2-font: 2rem;
   }
 
-  header,
-  header.sticky {
+  header {
     padding: 12px 5%;
   }
 
   .home {
-    height: 78vh;
+    height: 85vh;
     background-position: center;
+  }
+
+  .home-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-text p {
+    font-size: 1rem;
+  }
+
+  .service-text,
+  .about-col {
+    text-align: center;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 5%;
+  }
+}
+
+/* ---------- Small Phones (450px) ---------- */
+@media (max-width: 450px){
+
+  header {
+    padding: 10px 4%;
+  }
+
+  section {
+    padding: 50px 4%;
+  }
+
+  .home {
+    height: 75vh;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
   }
 
   .home-text h1 {
@@ -901,58 +931,16 @@ a:hover{
   }
 
   .home-text p {
-    font-size: 0.95rem;
-  }
-
-  .service-text {
-    padding: 18px;
-  }
-
-  .form-container {
-    width: 94%;
-  }
-
-  .social-icons i {
-    font-size: 22px;
+    font-size: 0.9rem;
   }
 }
 
-/* ----------- 450px and below (Small phones like iPhone SE) ------------ */
-@media (max-width: 450px) {
-
-  header,
-  header.sticky {
-    padding: 10px 4%;
-  }
-
-  section {
-    padding: 45px 4%;
-  }
-
-  .home {
-    height: 70vh;
-  }
-
-  .btn {
-    font-size: 0.85rem;
-    padding: 10px 18px;
-  }
-
-  footer h3 {
-    font-size: 20px;
-  }
-
-  .social-icons i {
-    font-size: 20px;
-  }
-}
-
-/* ----------- 360px and below (Very small phones) ------------ */
-@media (max-width: 360px) {
+/* ---------- Extra Small Phones (360px) ---------- */
+@media (max-width: 360px){
 
   :root {
     --h1-font: 2rem;
-    --h2-font: 1.5rem;
+    --h2-font: 1.6rem;
   }
 
   .navbar a {
@@ -968,7 +956,8 @@ a:hover{
   }
 
   .btn {
-    padding: 8px 14px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
   }
 }
 
